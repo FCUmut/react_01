@@ -1,8 +1,9 @@
 // import componentsImg from "./assets/components.png";
 import { CORE_CONCEPTS } from "./data.js";
 // since it is not default export but name export then you put curly braces to the imported value name
-import Header from "./components/Header.jsx";
+import Header from "./components/Header/Header.jsx";
 import CoreConcept from "./components/CoreConcept.jsx";
+import TabButton from "./components/TabButton.jsx";
 
 function App() {
   return (
@@ -36,6 +37,15 @@ function App() {
             <CoreConcept {...CORE_CONCEPTS[3]} />
             {/* shorther version */}
           </ul>
+        </section>
+        <section id="examples">
+          <h2>Examples</h2>
+          <menu>
+            <TabButton>Components</TabButton>
+            <TabButton>JSX</TabButton>
+            <TabButton>Props</TabButton>
+            <TabButton>State</TabButton>
+          </menu>
         </section>
         <h2>Time to get started!</h2>
       </main>
