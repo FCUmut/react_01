@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 // import componentsImg from "./assets/components.png";
 import { CORE_CONCEPTS } from "./data.js";
 // since it is not default export but name export then you put curly braces to the imported value name
@@ -6,9 +8,17 @@ import CoreConcept from "./components/CoreConcept.jsx";
 import TabButton from "./components/TabButton.jsx";
 
 function App() {
+  const [selectedTopic, setSelectedTopic] = useState("Please click a button");
+  // must called in top level component function
+
+  // let tabContent = "Plese click a button";
   function handleSelect(selectedButton) {
     //selectedButton => "components", "jsx", "props", "state"
-    console.log(selectedButton);
+
+    setSelectedTopic(selectedButton);
+    console.log(selectedTopic);
+    //tabContent = selectedButton;
+    // console.log(selectedButton);
   }
 
   return (
@@ -54,6 +64,8 @@ function App() {
             <TabButton onSelect={() => handleSelect("props")}>Props</TabButton>
             <TabButton onSelect={() => handleSelect("state")}>State</TabButton>
           </menu>
+          {/* {tabContent} */}
+          {selectedTopic}
         </section>
         <h2>Time to get started!</h2>
       </main>
